@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock head %}
+
+
+{% block body %}
+  <h1>Daftar Nama Produk yang sudah diinput</h1>
+  <table class="table">
+    <thead>
+      <td scope="col">Nama Produk</td>
+      <td scope="col">Keterangan</td>
+      <td scope="col">Harga</td>
+      <td scope="col">Jumlah</td>
+      <td scope="col">Modifikasi</td>
+    </thead>
+    <tbody>
+  {% for view in daftar_produk %}
+    <tr>
+      <th scope="row"> {{ view.nama_produk }} </th>
+      <td> {{ view.keterangan }} </td>
+      <td>Rp. {{ view.harga }} </td>
+      <td> {{ view.jumlah }} </td>
+      <td> 
+        <div class="btn-group" role="group">
+          <a href="/edit/{{ view.id }}"><button type="button" class="btn btn-outline-primary">Edit</button></a>
+          <a href="/delete/{{ view.id }}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+      </div>
+      </td>
+    </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+  <a href="/"><button type="button" class="btn btn-primary">Back</button></a>
+{% endblock body %}

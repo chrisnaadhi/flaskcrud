@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+ <title>Homepage Flask CRUD</title>
+{% endblock head %}
+
+
+{% block body %}
+  <div class="image-background">
+    <div class="filter-bg">
+      <div class="container-fluid">
+        <h1>Input Data Produk</h1>
+      <div class="form-input">
+        <form action="/" method="POST" autocomplete="off">
+          <div class="mb-3">
+            <label for="namaProduk" class="form-label">Nama Produk:</label>
+            <input type="text" class="form-control" name="nama_produk" id="nama_produk" required>
+            <div class="form-text">Masukkan Nama Produk</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Keterangan:</label>
+            <input type="text" class="form-control" name="keterangan" id="keterangan">
+            <div class="form-text">Masukkan Keterangan dari Produk</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Harga:</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Rp.</span>
+              <input type="number" class="form-control" name="harga" id="harga" required>
+            </div>
+            <div class="form-text">Masukkan Harga dari Produk tanpa titik atau koma</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Jumlah:</label>
+            <input type="text" class="form-control" name="jumlah" id="jumlah" required>
+            <div class="form-text">Masukkan Jumlah</div>
+          </div>
+            <input type="submit" value="Post" class="btn btn-success">
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}

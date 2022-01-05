@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock head %}
+
+
+{% block body %}
+  <div class="container-fluid">
+      <h1>Edit Data Produk</h1>
+      <div class="form-input">
+        <form action="/edit/{{ produk.id }}" method="POST">
+          <div class="mb-3">
+            <label for="namaProduk" class="form-label">Nama Produk:</label>
+            <input type="text" class="form-control" name="nama_produk" id="nama_produk" value="{{ produk.nama_produk }}">
+            <div class="form-text">Masukkan Nama Produk</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Keterangan:</label>
+            <input type="text" class="form-control" name="keterangan" id="keterangan" value="{{ produk.keterangan }}">
+            <div class="form-text">Masukkan Keterangan dari Produk</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Harga:</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Rp.</span>
+              <input type="number" class="form-control" name="harga" id="harga" value="{{ produk.harga }}">
+            </div>
+            <div class="form-text">Masukkan Harga dari Produk tanpa titik atau koma</div>
+          </div>
+          <div class="mb-3">
+            <label for="deskripsiKeterangan" class="form-label">Jumlah:</label>
+            <input type="number" class="form-control" name="jumlah" id="jumlah" value="{{ produk.jumlah }}">
+            <div class="form-text">Masukkan Jumlah</div>
+          </div>
+          <br>
+          <div class="d-grid gap-2 d-md-block">
+            <input type="submit" value="Save" class="btn btn-success">
+            <a href="/lihat"><button type="button" class="btn btn-outline-secondary">Cancel</button></a>
+          </div>
+        </form>
+        </div>
+      <br>
+{% endblock body %}
